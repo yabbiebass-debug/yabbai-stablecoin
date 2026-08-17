@@ -1,0 +1,25 @@
+# PRIVATE KEYS. Never commit.
+#
+# src/demo.js writes generated keypairs here so reruns reuse the same devnet
+# accounts. They are devnet keys and worth nothing — but the same file layout is
+# what a mainnet deployment would produce, and the habit of having .keys/ tracked
+# is the one that eventually costs somebody their treasury.
+#
+# git also keeps deleted content forever. A key committed once and removed in the
+# next commit is still in the history, still fetchable, and must be treated as
+# compromised from that moment on. So this line goes in before `git init`, not
+# after the first mistake.
+.keys/
+*.key
+*.pem
+id.json
+keypair.json
+
+node_modules/
+.env
+.env.*
+!.env.example
+
+npm-debug.log*
+.DS_Store
+Thumbs.db
